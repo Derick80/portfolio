@@ -22,6 +22,10 @@ footer {
   text-align: center;
   padding: 80px;
 }
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 h1 {
   font-size: 90px;
@@ -130,6 +134,11 @@ a {
   align-items: center;
 }
 
+.project_link {
+  text-decoration: none;
+  color: #808080;
+}
+
 .project_card {
   width: 300px;
   height: 500px;
@@ -142,6 +151,11 @@ a {
   justify-content: space-around;
 }
 
+.project_image {
+  margin-top: 25px;
+  width: 250px;
+  border-radius: 30px;
+}
 .burger {
   display: none;
   cursor: pointer;
@@ -158,6 +172,8 @@ a {
   color: rgb(39, 38, 38);
   background-color: rgb(255, 255, 255);
 }
+
+/* dark mode switch start */
 .switch {
   width: 80px;
   height: 40px;
@@ -199,11 +215,8 @@ a {
 .dark > * {
   color: rgb(255, 255, 255);
 }
+/* dark mode end ish */
 
-.dark .contact {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-}
 .dark footer {
   background-color: rgb(57, 57, 57);
   color: rgb(255, 255, 255);
@@ -214,6 +227,7 @@ svg {
 .dark svg {
   filter: invert(0%);
 }
+
 @media only screen and (max-width: 1000px) {
   body {
     overflow-x: hidden;
@@ -247,11 +261,6 @@ svg {
     display: none;
   }
 }
-.project_image {
-  margin-top: 25px;
-  width: 250px;
-  border-radius: 30px;
-}
 
 .nav_active {
   transform: translateX(0%);
@@ -278,13 +287,4 @@ svg {
 
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
-}
-hr {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.project_link {
-  text-decoration: none;
-  color: #808080;
 }
