@@ -2,7 +2,9 @@ const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav_links');
     const navLinks = document.querySelectorAll('.nav_links li')
-    burger.addEventListener('click', () => {
+
+
+burger.addEventListener('click', () => {
 
         nav.classList.toggle('nav_active')
         navLinks.forEach((link, index) => {
@@ -19,3 +21,9 @@ const navSlide = () => {
 }
 
 navSlide()
+
+const switchElement = document.querySelector('.switch')
+
+switchElement.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+})
