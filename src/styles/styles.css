@@ -172,8 +172,9 @@ p {
 .project_image {
   margin-top: 25px;
   width: 250px;
-  border-radius: 125px;
+  border-radius: 30px;
 }
+
 .nav_active {
   transform: translateX(0%);
 }
