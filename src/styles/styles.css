@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 9vh;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 footer {
   background-color: rgba(255, 255, 255);
@@ -70,7 +70,7 @@ a {
   list-style-type: none;
   width: 800px;
   justify-content: space-around;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .nav_links li {
@@ -228,6 +228,59 @@ svg {
   filter: invert(0%);
 }
 
+.resume_wrapper {
+  display: grid;
+  grid-template-columns: 1;
+}
+
+.resume_wrapper .resume_title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.resume_wrapper .resume_name_role .name {
+  font-size: 20px;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 4px;
+}
+.resume_wrapper .resume_item {
+  text-align: left;
+  padding: 20px 0;
+  border-bottom: 1px solid #58abd8;
+}
+
+/* .resume_wrapper .resume_item .resume_title {
+  color: #26252d;
+} */
+
+.resume_wrapper .resume_data {
+  display: flex;
+}
+
+.resume_wrapper .resume_data .year {
+  padding-right: 35px;
+  width: 135px;
+  position: relative;
+  margin-top: 2em;
+}
+.resume_wrapper .resume_data .content {
+  padding-left: 35px;
+  margin-bottom: 20px;
+  width: calc(80% - 135px);
+}
+
+.resume_item .resume_position_title {
+  font-style: italic;
+}
+.resume_data .uls li {
+  text-align: left;
+}
 @media only screen and (max-width: 1000px) {
   body {
     overflow-x: hidden;

@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: rgba(255, 255, 255);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.resume_wrapper {
+  display: flex;
+  width: 800px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255);
+  padding: 10px;
+}
+
+.resume_title {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.resume_wrapper .resume_namerole .name {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 4px;
+}
+.resume_wrapper .resume_item {
+  padding: 20px 0;
+  border-bottom: 1px solid #0175b2;
+}
+
+.resume_wrapper .resume_item .resume_title {
+  color: #26252d;
+}
+
+.resume_wrapper .resume_data {
+  display: flex;
+}
+
+.resume_wrapper .resume_data .year {
+  padding-right: 35px;
+  width: 115px;
+  position: relative;
+}
+.resume_wrapper .resume_data .content {
+  padding-left: 35px;
+  margin-bottom: 20px;
+  width: calc(100% - 115px);
+}
