@@ -281,6 +281,87 @@ svg {
 .resume_data .uls li {
   text-align: left;
 }
+
+.resume_item_publications {
+  text-align: left;
+  padding: 20px 0;
+  border-bottom: 1px solid #58abd8;
+}
+
+.publications li {
+  list-style-type: none;
+}
+.publications .publications_authors {
+  font-size: 1em;
+}
+
+.publications .article_title {
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.publications .journal_title {
+  font-size: 1em;
+  font-weight: bold;
+  padding-right: 0.5em;
+}
+
+.publications .journal_citation {
+  display: flex;
+}
+.publications .doi {
+  text-decoration: underline;
+}
+
+h3 .subtext {
+  font-weight: bold;
+}
+.resume_item_resume_skill {
+  display: grid;
+
+  gap: 1em;
+  text-align: left;
+}
+.resume_item_resume_skill .resume_skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  text-align: center;
+  padding: 20px 0;
+}
+.resume_skills .skills_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume_skills .skills_list .skills_left {
+  text-align: left;
+  width: 120px;
+  padding-right: 0.5em;
+}
+
+/*
+.resume_info .resume_item .resume_skills .skills_list {
+  display: flex;
+} */
+.resume_skills .skills_list .skills_bar {
+}
+.resume_wrapper .resume_skills .skills_list .skills_bar p {
+  position: relative;
+  width: 125px;
+  height: 0.5em;
+  background: rgb(194, 197, 197);
+}
+
+.resume_wrapper .resume_skills .skills_list .skills_bar p span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(39, 38, 38);
+  height: 100%;
+  width: 100%;
+}
 @media only screen and (max-width: 1000px) {
   body {
     overflow-x: hidden;
@@ -312,6 +393,16 @@ svg {
   }
   .logo {
     display: none;
+  }
+  .resume_item .resume_skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .resume_skills .skills_list {
+    display: flex;
+    align-items: center;
+    justify-content: left;
   }
 }
 
