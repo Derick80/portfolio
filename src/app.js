@@ -22,6 +22,12 @@ burger.addEventListener('click', () => {
 
 navSlide()
 
+window.addEventListener('scroll', function() {
+    var nav = document.querySelector("nav")
+    nav.classList.toggle('sticky',window.scrollY > 0);
+})
+
+
 const switchElement = document.querySelector('.switch')
 
 switchElement.addEventListener('click', () => {
