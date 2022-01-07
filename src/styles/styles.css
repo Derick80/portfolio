@@ -541,6 +541,22 @@ h3 .subtext {
   .logo {
     display: none;
   }
+  .resume_wrapper .resume_data {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .resume_wrapper .resume_data .year {
+    bottom: 20px;
+    width: 135px;
+
+    margin-top: 1.5em;
+  }
+
+  .resume_wrapper .resume_data .content {
+    margin-bottom: 20px;
+  }
+
   .resume_item_resume_skill .resume_skills {
     display: grid;
     grid-template-columns: 1fr;
