@@ -1,9 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  color: rgb(39, 38, 38);
-  transition: 0.3s;
 }
 /* section {
   background-color: rgba(255, 255, 255);
@@ -13,17 +18,29 @@ nav {
   z-index: 999;
   position: fixed;
   display: flex;
-  top: 0;
-  left: 0;
   width: 100%;
+  height: 10vh;
+  background-color: rgb(134, 162, 194);
   justify-content: space-between;
   align-items: center;
-
   transition: 0.6s;
 }
-
+.nav_links {
+  display: flex;
+  list-style: none;
+  width: 800px;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav_links li {
+  text-decoration: none;
+}
+.nav_links li a {
+  color: rgb(256, 256, 256);
+  text-decoration: none;
+}
 nav.sticky {
-  background: rgb(163, 161, 161);
+  background: rgb(134, 162, 194);
 }
 footer {
   background-color: rgba(255, 255, 255);
@@ -58,13 +75,14 @@ a {
 }
 
 .hero {
-  height: 100vh;
-  font-size: 40px;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero_area {
   display: flex;
-  height: 100%;
   justify-content: space-between;
   align-items: center;
 }
@@ -72,18 +90,6 @@ a {
 .hero_text {
   margin-left: 80px;
   margin-bottom: 200px;
-}
-
-.nav_links {
-  display: flex;
-  list-style-type: none;
-  width: 800px;
-  justify-content: space-around;
-  font-size: 24px;
-}
-
-.nav_links li {
-  text-decoration: none;
 }
 
 .subtext {
@@ -182,13 +188,30 @@ a {
   background-color: rgb(255, 255, 255);
 }
 
+.up_arrow {
+  visibility: hidden;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-top: 4px solid rgb(255, 255, 255);
+  border-left: 4px solid rgb(255, 255, 255);
+  transform: rotate(45deg);
+  left: 25%;
+  top: 10px;
+  transition: 0.3s ease;
+}
+
 /* dark mode switch start */
 .switch {
-  width: 80px;
-  height: 40px;
+  z-index: 9999;
+  width: 40px;
+  height: 80px;
   border-radius: 20px;
-  background-color: rgb(39, 38, 38);
-  position: relative;
+  background-color: rgb(38, 38, 38);
+  position: fixed;
+  right: 0;
+  bottom: 80px;
+  cursor: pointer;
 }
 
 .flicker {
@@ -210,12 +233,47 @@ a {
   border-radius: 10px;
   box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
   position: absolute;
-  top: 5px;
-  left: 45px;
+  top: 45px;
+  left: 5px;
 }
 
 .dark .flicker {
-  transform: translateX(40px);
+  transform: translateY(40px);
+}
+.switch.glue {
+  width: 40px;
+  height: 120px;
+  border-radius: 20px;
+  background-color: rgb(38, 38, 38);
+  position: fixed;
+  right: 0;
+  bottom: 80px;
+  cursor: pointer;
+}
+
+.switch.glue .flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  transition: 0.3s;
+  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+    inset -9px -9px 4px rgb(195 193 198 / 90%);
+}
+.switch.switch.glue .up_arrow {
+  visibility: visible;
+}
+.switch.glue .moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+  position: absolute;
+  top: 85px;
+  left: 5px;
 }
 .dark {
   background-color: rgb(57, 57, 57);
@@ -392,7 +450,7 @@ h3 .subtext {
   width: 100%;
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   body {
     overflow-x: hidden;
   }
@@ -400,18 +458,23 @@ h3 .subtext {
     display: flex;
     flex-wrap: wrap;
   }
+  nav {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .nav_links {
+    position: fixed;
     right: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    font-size: 0.9em;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
-  nav {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+
   .nav_links li {
     opacity: 0;
   }
@@ -430,25 +493,42 @@ h3 .subtext {
   }
 }
 
-@media only screen and (max-width: 481px) {
+@media screen and (max-width: 481px) {
   body {
     overflow-x: hidden;
+  }
+  .hero {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+  }
+  .hero_area {
+    display: flex;
+    justify-content: space-around;
+  }
+  .hero_text {
+    align-items: center;
   }
   .project_container {
     display: flex;
     flex-wrap: wrap;
   }
+
+  nav {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .nav_links {
+    position: fixed;
     right: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
-  nav {
-    display: flex;
-    flex-direction: column-reverse;
+    transition: transform 0.3s ease-in;
+    font-size: 14px;
   }
   .nav_links li {
     opacity: 0;
@@ -467,7 +547,9 @@ h3 .subtext {
   }
 }
 .nav_active {
+  margin-top: 20px;
   transform: translateX(0%);
+  display: flex;
 }
 
 @keyframes navLinkFade {
