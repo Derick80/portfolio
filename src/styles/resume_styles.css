@@ -1,5 +1,7 @@
 :root {
   --ff-body: 'Poppins', sans-serif;
+
+  --gutter: 0.5rem;
   --fs-H1: 4.5rem;
   --fs-H2: 2.75rem;
   --fs-H3: 2rem;
@@ -53,15 +55,25 @@ a {
   color: rgb(0, 0, 0);
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 2px;
+nav {
+  background-color: red;
+  height: 10vh;
+  width: 100%;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/* section {
+  box-sizing: border-box;
+} */
 .resume {
   display: flex;
   flex-direction: column;
+
   margin: 5px;
 }
 .resume_year_role {
@@ -90,7 +102,25 @@ a {
     --fs-body-2: 0.875rem;
     --fs-caption: 0.75rem;
   }
+  .wrapper {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .resume {
+    grid-column-start: span 12;
+  }
 }
-
-/* 40 em = 640 px 
+@media (min-width: 50em) {
+  :root {
+    --fs-H1: 6rem;
+    --fs-H2: 3.75rem;
+    --fs-H3: 3rem;
+    --fs-H4: 2.125rem;
+    --fs-H5: 1.5rem;
+    --fs-H6: 1.25rem;
+    --fs-body-1: 1rem;
+    --fs-body-2: 0.875rem;
+    --fs-caption: 0.75rem;
+  }
+}
+/* 40 em = 640 px
 50em = 960px */
