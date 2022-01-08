@@ -1,3 +1,22 @@
+:root {
+  --ff-body: 'Poppins', sans-serif;
+  --padding: 40px;
+  --gutter: 0.5rem;
+  --fs-H1: 4.5rem;
+  --fs-H2: 2.75rem;
+  --fs-H3: 2rem;
+  --fs-H4: 2.125rem;
+  --fs-H5: 1.5rem;
+  --fs-H6: 1.25rem;
+  --fs-body-1: 1rem;
+  --fs-body-2: 0.875rem;
+  --fs-caption: 0.75rem;
+  --clr-primary-light: rgb(255, 255, 255);
+  --clr-primary-dark: rgb(38, 38, 38);
+  --fclr-primary-light: rgb(38, 38, 38);
+  --fclr-primary-dark: rgb(255, 255, 255);
+  --nav-background: rgb(134, 162, 194);
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,60 +26,72 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: rgb(255, 255, 255);
-  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: var(--clr-primary-light);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.3;
 }
-/* section {
-  background-color: rgba(255, 255, 255);
-} */
 
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.burger {
+  display: block;
+}
 nav {
-  z-index: 999;
-  position: fixed;
   display: flex;
-  width: 100%;
   height: 10vh;
-  background-color: rgb(134, 162, 194);
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.6s;
+  position: relative;
+  background-color: var(--nav-background);
 }
 .nav_links {
+  position: absolute;
+  right: 0px;
   display: flex;
-  list-style: none;
-  width: 800px;
-  justify-content: space-around;
+  flex-direction: column;
+
   align-items: center;
+  width: 50%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
 }
+
 .nav_links li {
+  list-style: none;
+  opacity: 0;
+}
+
+.nav_links a {
   text-decoration: none;
 }
-.nav_links li a {
-  color: rgb(256, 256, 256);
-  text-decoration: none;
-}
-nav.sticky {
+/* nav.sticky {
   background: rgb(134, 162, 194);
-}
-footer {
-  background-color: rgba(255, 255, 255);
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 80px;
-}
+} */
+
 hr {
   margin-left: 20px;
   margin-right: 20px;
 }
 
 h1 {
-  font-size: 90px;
-  margin: 0;
+  font-size: var(--fs-H1);
+  font-weight: 600;
+  line-height: 1.3;
 }
 h2 {
-  font-size: 50px;
+  font-size: var(--fs-H2);
+  font-weight: 600;
 }
 p {
+  font-size: var(--fs-body-1);
+}
+.p_skill {
   margin: 0;
   font-size: 30px;
   font-weight: 300;
@@ -75,21 +106,11 @@ a {
 }
 
 .hero {
-  height: 90vh;
+  padding: var(--padding);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero_area {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
-
-.hero_text {
-  margin-left: 80px;
-  margin-bottom: 200px;
 }
 
 .subtext {
@@ -97,6 +118,7 @@ a {
   font-weight: 300;
 }
 .button {
+  visibility: hidden;
   width: 200px;
   height: 55px;
   border-radius: 20px;
@@ -107,37 +129,18 @@ a {
   padding-top: 5px;
   margin-top: 20px;
 }
-.button:hover {
-  background-color: rgb(101, 198, 255);
-}
-.button:active {
-  background-color: rgb(124, 126, 126);
-  color: #808080;
-}
 
 .socials {
-  padding-bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .logo {
-  height: 80px;
-  margin: 30px;
+  visibility: hidden;
 }
 .social {
-  margin: 20px;
+  margin: 5px;
 }
 
-.sub_section {
-  display: flex;
-  justify-content: space-around;
-  padding: 80px;
-}
-
-.sub_section_alternative {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 80px;
-}
 .headshot {
   aspect-ratio: 16 / 9;
   width: 300px;
@@ -154,16 +157,9 @@ a {
   color: #808080;
 }
 
-.project_card {
-  width: 300px;
-  height: 500px;
-  box-shadow: 5px 5px 20px grey;
-  margin: 10px;
-}
-
 .project_container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .project_image {
@@ -171,18 +167,7 @@ a {
   width: 250px;
   border-radius: 30px;
 }
-.burger {
-  display: none;
-  cursor: pointer;
-}
-.burger div {
-  width: 25px;
-  height: 3px;
-  margin: 5px;
-  transition: all 0.3s ease;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-}
+
 .dark .burger div {
   color: rgb(39, 38, 38);
   background-color: rgb(255, 255, 255);
@@ -300,14 +285,18 @@ svg {
   grid-template-columns: 1;
 }
 
-.resume_wrapper .resume_title {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 10px;
-  letter-spacing: 4px;
-}
+.resume {
+  display: flex;
+  flex-direction: column;
 
+  margin: 5px;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .resume_wrapper .resume_name_role .name {
   font-size: 20px;
 
@@ -333,11 +322,19 @@ svg {
   display: flex;
 }
 
-.resume_wrapper .resume_data .year {
-  padding-right: 35px;
-  width: 135px;
-  position: relative;
-  margin-top: 2em;
+.resume_year_role {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.resume_employername {
+  font-size: var(--fs-H4);
+  font-weight: 400;
+}
+.resume_position_title {
+  font-size: var(--fs-H6);
+  font-weight: 600;
 }
 .resume_wrapper .resume_data .content {
   padding-left: 35px;
@@ -345,9 +342,6 @@ svg {
   width: calc(80% - 135px);
 }
 
-.resume_item .resume_position_title {
-  font-style: italic;
-}
 .resume_data .uls li {
   text-align: left;
 }
@@ -389,19 +383,18 @@ svg {
 h3 .subtext {
   font-weight: bold;
 }
+
+.resume_item_resume_skill .resume_skills {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .resume_item_resume_skill {
   display: grid;
 
   gap: 1em;
   text-align: left;
 }
-.resume_item_resume_skill .resume_skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1em;
-  text-align: center;
-  padding: 20px 0;
-}
+
 .resume_skills .skills_list {
   display: flex;
   align-items: center;
@@ -419,14 +412,14 @@ h3 .subtext {
   display: flex;
 } */
 
-.resume_wrapper .resume_skills .skills_list .skills_bar p {
+.resume_skills .skills_list .skills_bar p {
   position: relative;
   width: 125px;
   height: 0.5em;
   background: rgb(194, 197, 197);
 }
 
-.resume_wrapper .resume_skills .skills_list .skills_bar p span {
+.resume_skills .skills_list .skills_bar p span {
   position: absolute;
   top: 0;
   left: 0;
@@ -435,57 +428,103 @@ h3 .subtext {
   width: 100%;
 }
 
-.dark .resume_wrapper .resume_skills .skills_list .skills_bar p {
+.dark .resume_skills .skills_list .skills_bar p {
   position: relative;
   width: 125px;
   height: 0.5em;
-  background: rgb(39, 38, 38);
+  background: rgb(256, 256, 256);
 }
-.dark .resume_wrapper .resume_skills .skills_list .skills_bar p span {
+.dark .resume_skills .skills_list .skills_bar p span {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgb(256, 256, 256);
+  background: rgb(39, 38, 38);
+
   height: 100%;
   width: 100%;
 }
 
-@media screen and (max-width: 1000px) {
-  body {
-    overflow-x: hidden;
+@media (min-width: 40em) {
+  :root {
+    --fs-H1: 6rem;
+    --fs-H2: 3.75rem;
+    --fs-H3: 3rem;
+    --fs-H4: 2.125rem;
+    --fs-H5: 1.5rem;
+    --fs-H6: 1.25rem;
+    --fs-body-1: 1rem;
+    --fs-body-2: 0.875rem;
+    --fs-caption: 0.75rem;
   }
-  .project_container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  nav {
-    display: flex;
-    flex-direction: column-reverse;
-  }
+
   .nav_links {
-    position: fixed;
-    right: 0px;
+    position: relative;
+    width: 50%;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    transform: translateX(100%);
+    color: white;
+    /* transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    font-size: 0.9em;
+    font-size: var(--fs-body-1);
+    color: var(--fclr-primary-light); */
     margin-top: 2px;
     margin-bottom: 2px;
   }
-
   .nav_links li {
-    opacity: 0;
+    opacity: 1;
+    list-style: none;
   }
+  .nav_links a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: var(--fs-body-2);
+    font-weight: 700;
+  }
+
   .burger {
-    display: block;
-    background-color: transparent;
-    align-self: flex-end;
-    margin: 10px;
+    display: none;
+  }
+  .burger div {
+    width: 2px;
+    height: 3px;
+
+    margin: 5px;
+  }
+
+  .button {
+    visibility: visible;
+  }
+  .button:hover {
+    background-color: rgb(101, 198, 255);
+  }
+  .button:active {
+    background-color: rgb(124, 126, 126);
+    color: #808080;
+  }
+  .socials {
+    display: inline;
+    padding-bottom: 200px;
   }
   .logo {
-    display: none;
+    height: 80px;
+    margin: 30px;
+  }
+  .social {
+    margin: 20px;
+  }
+  .project_container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .project_card {
+    width: 300px;
+    height: 500px;
+    box-shadow: 5px 5px 20px grey;
+    margin: 10px;
   }
   .resume_item_resume_skill .resume_skills {
     display: grid;
@@ -493,75 +532,34 @@ h3 .subtext {
   }
 }
 
-@media screen and (max-width: 481px) {
-  body {
-    overflow-x: hidden;
-  }
-  .hero {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1.5em;
-  }
-  .hero_area {
-    display: flex;
-    justify-content: space-around;
-  }
-  .hero_text {
-    align-items: center;
-  }
-  .project_container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .nav_links {
-    position: fixed;
-    right: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-    font-size: 14px;
-  }
-  .nav_links li {
-    opacity: 0;
-  }
-  .burger {
-    display: block;
-    background-color: transparent;
-    align-self: flex-end;
-  }
-  .logo {
-    display: none;
-  }
-  .resume_wrapper .resume_data {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .resume_wrapper .resume_data .year {
-    bottom: 20px;
-    width: 135px;
-
-    margin-top: 1.5em;
-  }
-
-  .resume_wrapper .resume_data .content {
-    margin-bottom: 20px;
+@media (min-width: 50em) {
+  :root {
+    --fs-H1: 6rem;
+    --fs-H2: 3.75rem;
+    --fs-H3: 3rem;
+    --fs-H4: 2.125rem;
+    --fs-H5: 1.5rem;
+    --fs-H6: 1.25rem;
+    --fs-body-1: 1rem;
+    --fs-body-2: 0.875rem;
+    --fs-caption: 0.75rem;
   }
 
   .resume_item_resume_skill .resume_skills {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    text-align: center;
+    padding: 20px 0;
   }
 }
+
+/* .hero_text {
+  margin-left: 80px;
+  margin-bottom: 200px;
+} */
+/* 40 em = 640 px
+50em = 960px */
 .nav_active {
   margin-top: 20px;
   transform: translateX(0%);
