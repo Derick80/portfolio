@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  min-height: 8vh;
+  background-color: slategrey;
+  font-family: 'Quicksand', sans-serif;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  color: azure;
+}
+/* This removes the bullet point sytle from all lists in the index.html */
+.nav-links li {
+  list-style: none;
+}
+
+/* Code below modifies all a things */
+.nav-links li a {
+  color: azure;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+}
+
+.burger div {
+  display: flex;
+  width: 25px;
+  height: 3px;
+  background-color: azure;
+  margin: 7px;
+  transition: all 0.3s ease;
+}
