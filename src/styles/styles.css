@@ -26,7 +26,6 @@
 body {
 overflow-x: hidden;
   background-color: var(--clr-primary-light);
-
   font-family: var(--ff-body);
   font-size: var(--fs-body);
 
@@ -36,11 +35,13 @@ h1 {
   font-size: var(--fs-H1);
   font-weight: 600;
   line-height: 1.3;
+  margin:0;
 }
 
 h2 {
   font-size: var(--fs-H2);
   font-weight: 600;
+  margin:0;
 }
 
 p {
@@ -208,7 +209,7 @@ hr {
   background-color: rgb(38, 38, 38);
   position: fixed;
   right: 0;
-  bottom: 80px;
+  bottom: 5em;
   cursor: pointer;
 }
 
@@ -457,6 +458,7 @@ h3 .subtext {
   width: 100%;
 }
 /* #endregion misc */
+/* #startregion mid media */
 @media (min-width: 40em) {
   :root {
     --fs-H1: 6rem;
@@ -534,7 +536,8 @@ h3 .subtext {
     grid-template-columns: 1fr 1fr;
   }
 }
-
+/* #endregion  mid media */
+/* #startregion large_media */
 @media (min-width: 50em) {
   :root {
     --fs-H1: 6rem;
@@ -558,7 +561,7 @@ h3 .subtext {
     padding: 20px 0;
   }
 }
-
+/* #endregion large_media */
 /* 40 em = 640 px
 50em = 960px */
 
